@@ -1,0 +1,255 @@
+
+.background {
+    padding-right: 10px;
+    display: grid;
+    grid-template-areas:  
+    "header side"
+    "main side";
+    background-size: cover;
+    height: 100vh;
+    background-image: url("img/running.jpeg");
+    background-position: center center;
+    grid-auto-rows: auto 1fr auto;
+    grid-template-columns: 1fr minmax(max-content, 400px);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    grid-area: header;
+    justify-content: space-around;
+    align-items: baseline;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+}
+
+.navbar > a {
+    padding: 0 5px;
+}
+
+.main {
+    grid-area: main;
+}
+
+.icons .logo:nth-child(2) {
+    margin-left: -20px;
+}
+
+.navbar-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity {
+    grid-area: side;
+    max-width: 400px;
+    z-index: 2;
+    max-height: 100vh;
+}
+
+#activity-button {
+    display: flex;
+    text-align: center;
+    font-size: 22px;
+    background-color: black;
+    color: yellow;
+    align-items: center;
+}
+
+#dropdown {
+    max-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#unavailable {
+    padding: 10px;
+    color: red;
+    background-color: #ddda;
+    font-size: 16px;
+    display: none;
+}
+
+.icon-error {
+    height: 24px;
+    width: 24px; 
+    margin-left: 10px;
+}
+
+#unavailable-text {
+    padding-left: 20px;
+    font-size: 18px;
+    word-break: break-word;
+}
+
+.div-weather {
+    display: none;
+}
+
+#weather {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ddda;
+}
+
+.div-location {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    font-size: 18px;
+    display: none;
+}
+
+.div-icon {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-weather {
+    margin: 10px;
+    border-radius: 30%;
+    border: 1px solid gray;
+    background-color: yellowgreen;
+}
+
+.div-condition {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 18px;
+}
+
+#dropdown-bottom {
+    z-index: -1;
+    display: none;
+    overflow: auto;
+}
+
+.activities-description {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 22px;
+    background-color: black;
+    color: yellow;
+    align-items: center;
+}
+
+.solo-team {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 20px;
+    background-color: white;
+    color: black;
+}
+
+.solo-team span {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid gray;
+}
+
+.solo-team span.selected {
+    background-color: yellowgreen;
+}
+
+.list-activities {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #ddd9;
+    font-size: 20px;
+    overflow: auto;
+}
+
+.activities {
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+    color: darkred;
+}
+
+#longitude::before {
+    content: 'Lon: ';
+    color: black;
+} 
+
+#latitude::before {
+    content: 'Lat: ';
+    color: black;
+} 
+
+#temperature::before {
+    content: 'Temp: ';
+    color: black;
+} 
+
+#temperature::after {
+    content: ' \2103';
+    color: black;
+} 
+
+#humidity::before {
+    content: 'Humidity: ';
+    color: black;
+} 
+
+#pressure::before {
+    content: 'Pressure: ';
+    color: black;
+}
+
+#wind::before {
+    content: 'Wind: ';
+    color: black;
+}
+
+#wind::after {
+    content: ' m/sec';
+    color: black;
+}
+
+.api-keys {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    border: 2px solid gray;
+    background-color: #ddd9;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+#key {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.my-photo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    
+}
+
+.my-photo img {
+    height: 60px;
+    width: 60px;
+}
+
+@media screen and (max-width: 600px) {
+
+    .background {
+        grid-template-areas:  
+        "header"
+        "side"
+        "main";
+        grid-template-columns: 1fr;
+        padding-right: 0;
+    }
+}
